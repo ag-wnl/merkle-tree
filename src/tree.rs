@@ -5,11 +5,10 @@ pub struct MerkleTree {
     nodes: Vec<[u8; 32]>,
 }
 
-
 impl MerkleTree {
     pub fn create_from_leaves(leaves: &[[u8; 32]]) -> Self {
-        let n = leaves.len().next_power_of_two();
-        let depth = n.trailing_zeros() as usize;
+        let n: usize = leaves.len().next_power_of_two();
+        let depth = n.trailing_zeros() as usize; // caus 2^d = n -> 2's powers always kinda: 001000000
 
         let mut nodes = vec![[0u8; 32]; 2 * n];
         

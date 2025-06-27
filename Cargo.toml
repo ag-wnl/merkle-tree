@@ -1,0 +1,11 @@
+[package]
+name = "merkle_blake3"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+blake3 = "1.3"
+
+[dev-dependencies]
+rand = "0.8"
+criterion = "0.4"
